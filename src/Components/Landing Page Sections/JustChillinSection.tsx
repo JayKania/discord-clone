@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import just_chillin_img from "../assets/just_chiling_landing.svg"
-import tiny_stars_img from "../assets/tiny_stars_landing.svg"
+import just_chillin_img from "../../assets/just_chiling_landing.svg"
+import tiny_stars_img from "../../assets/tiny_stars_landing.svg"
 
 const JustChillinSection = () => {
     return (
@@ -68,7 +68,7 @@ const StyledJustChillinSection = styled.div`
     .button-container {
         .download {
             color: white;
-            background-color: var(--primary-color);
+            background-color: var(--primary-font-color);
             border: none;
             padding: 1.7rem 2.5rem;
             border-radius: 50px;

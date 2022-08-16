@@ -1,6 +1,8 @@
 :root {
-  --primary-color: rgb(64, 78, 237);
+  --primary-background-color: rgb(64, 78, 237);
+  --primary-font-color: rgb(87, 101, 242);
   --secondary-background-color: rgb(246, 246, 246);
+  --footer-background-color: rgb(35, 39, 42);
   font-size: 62.5%;
 }
 

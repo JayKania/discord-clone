@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import discord_logo from "../assets/discord_logo_1.svg"
+import discord_logo from "../../assets/discord_logo_1.svg"
 interface navProps {
 
 }
@@ -56,6 +56,9 @@ const StyledNavbar = styled.nav`
             color: white;
             font-weight: 600;
             font-size: 0.9em;
+            :hover {
+                text-decoration: underline;
+            }
         }
     }
 
@@ -68,7 +71,7 @@ const StyledNavbar = styled.nav`
             transition: box-shadow 200ms ease, color 200ms ease;
             :hover {
                 cursor: pointer;
-                color: var(--primary-color);
+                color: var(--primary-font-color);
                 box-shadow: 0px 5px 5px 5px rgb(48, 48, 48, 0.1);
             }
         }

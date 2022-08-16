@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import hanging_out_img from "../assets/hanging_out_easy_landing.svg";
+import hanging_out_img from "../../assets/hanging_out_easy_landing.svg";
 
 const HangingOutSection = () => {
     return (

@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 import Navbar from './Navbar'
-import background_img from "../assets/center_bg_landing_header.svg"
-import left_img from "../assets/left_bg_landing_header.svg"
-import right_img from "../assets/right_bg_landing_header.svg"
+import background_img from "../../assets/center_bg_landing_header.svg"
+import left_img from "../../assets/left_bg_landing_header.svg"
+import right_img from "../../assets/right_bg_landing_header.svg"
 interface homeProps {
 
 }
@@ -34,7 +34,7 @@ const Home = (props: homeProps) => {
 }
 
 const StyledHome = styled.div`
-    background-color:  var(--primary-color);
+    background-color:  var(--primary-background-color);
     height: 80vh;
     background-image:url(${left_img}),url(${right_img}), url(${background_img});
     background-position: left -27rem bottom, right -25rem bottom, bottom;
@@ -82,7 +82,7 @@ const StyledTitle = styled.div`
             align-items: center;
             gap: 5px;
             :hover {
-                color: var(--primary-color);
+                color: var(--primary-font-color);
             }
         }
         .browser {

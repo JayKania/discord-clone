@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import invite_only_img from "../assets/invite_only_landing.svg";
+import invite_only_img from "../../assets/invite_only_landing.svg";
 
 const InviteOnlySection = () => {
     return (

@@ -1,6 +1,5 @@
-import React from 'react'
 import styled from 'styled-components';
-import fandom_img from "../assets/fandom_landing.svg";
+import fandom_img from "../../assets/fandom_landing.svg";
 
 
 
