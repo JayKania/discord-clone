@@ -33,13 +33,15 @@ const StyledNavbar = styled.nav`
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 2rem 0;
+    padding: 2rem 1.6rem;
     .logo-container {
         display: flex;
         align-items: center;
         gap: 1rem;
         span {
             font-weight: 700;
+            font-family: uni-sans;
+            letter-spacing: 2px;
         }
         :hover {
             cursor: pointer;

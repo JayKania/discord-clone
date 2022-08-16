@@ -14,3 +14,8 @@ body {
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
+
+@font-face {
+  font-family: uni-sans;
+  src: url("./fonts/uni-sans/Uni\ Sans\ Heavy.otf");
+}
