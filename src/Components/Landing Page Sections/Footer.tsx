@@ -24,42 +24,45 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div className="route-section">
-                    <div>Product</div>
-                    <a href="#">Download</a>
-                    <a href="#">Nitro</a>
-                    <a href="#">Status</a>
+                <div className="footer-routes">
+                    <div className="route-section">
+                        <div>Product</div>
+                        <a href="#">Download</a>
+                        <a href="#">Nitro</a>
+                        <a href="#">Status</a>
+                    </div>
+
+                    <div className="route-section">
+                        <div>Company</div>
+                        <a href="#">About</a>
+                        <a href="#">Jobs</a>
+                        <a href="#">Branding</a>
+                        <a href="#">Newsroom</a>
+                    </div>
+
+                    <div className="route-section">
+                        <div>Resources</div>
+                        <a href="#">College</a>
+                        <a href="#">Support</a>
+                        <a href="#">Safety</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Feedback</a>
+                        <a href="#">Developers</a>
+                        <a href="#">Streamkit</a>
+                    </div>
+
+                    <div className="route-section">
+                        <div>Policies</div>
+                        <a href="#">Terms</a>
+                        <a href="#">Privacy</a>
+                        <a href="#">Cookie Settings</a>
+                        <a href="#">Guidelines</a>
+                        <a href="#">Acknowledgements</a>
+                        <a href="#">Licenses</a>
+                        <a href="#">Moderation</a>
+                    </div>
                 </div>
 
-                <div className="route-section">
-                    <div>Company</div>
-                    <a href="#">About</a>
-                    <a href="#">Jobs</a>
-                    <a href="#">Branding</a>
-                    <a href="#">Newsroom</a>
-                </div>
-
-                <div className="route-section">
-                    <div>Resources</div>
-                    <a href="#">College</a>
-                    <a href="#">Support</a>
-                    <a href="#">Safety</a>
-                    <a href="#">Blog</a>
-                    <a href="#">Feedback</a>
-                    <a href="#">Developers</a>
-                    <a href="#">Streamkit</a>
-                </div>
-
-                <div className="route-section">
-                    <div>Policies</div>
-                    <a href="#">Terms</a>
-                    <a href="#">Privacy</a>
-                    <a href="#">Cookie Settings</a>
-                    <a href="#">Guidelines</a>
-                    <a href="#">Acknowledgements</a>
-                    <a href="#">Licenses</a>
-                    <a href="#">Moderation</a>
-                </div>
             </StyledFooterContent>
             <div className="seperator"></div>
             <div className="logo-signup-container">
@@ -122,7 +125,9 @@ const StyledFooterContent = styled.div`
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    gap: 15rem;
     .info-section {
+        flex-basis: 20%;
         h4 {
             color: var(--primary-font-color);
             font-size: 4rem;
@@ -147,19 +152,24 @@ const StyledFooterContent = styled.div`
         }
     }
 
-    .route-section {
+    .footer-routes {
         display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-        font-weight: 300;
-        div:first-of-type{
-            color: var(--primary-font-color);
-        }
-        a {
-            text-decoration: none;
-            color: white;
-            :hover {
-                text-decoration: underline;
+        justify-content: space-between;
+        flex-basis: 80%;
+        .route-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            font-weight: 300;
+            div:first-of-type{
+                color: var(--primary-font-color);
+            }
+            a {
+                text-decoration: none;
+                color: white;
+                :hover {
+                    text-decoration: underline;
+                }
             }
         }
     }

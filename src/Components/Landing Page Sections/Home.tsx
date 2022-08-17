@@ -14,7 +14,7 @@ const Home = (props: homeProps) => {
             <StyledTitle>
                 <h1>IMAGINE A PLACE...</h1>
                 <p>...where you can belong to a school club, a gaming group, or a worldwide art community.
-                    <br /> Where just you and a handful of friends can spend time together.
+                    Where just you and a handful of friends can spend time together.
                     A place that makes it easy to talk every day and hang out more often.
                 </p>
                 <div className="button-container">
@@ -40,6 +40,22 @@ const StyledHome = styled.div`
     background-position: left -27rem bottom, right -25rem bottom, bottom;
     background-repeat: no-repeat, no-repeat, no-repeat;
     background-size: 45%, 40%, cover;
+
+    @media only screen and (max-width: 540px) {
+        background-image: url(${left_img});
+        background-position: left -80px bottom;
+        height: fit-content;
+        padding-bottom: 18rem;
+        background-size: 100%;
+    }
+
+    @media only screen and (min-width: 541px) and (max-width: 1114px) {
+        background-image: url(${right_img}), url(${background_img});
+        background-position: right -150px bottom, bottom;
+        height: fit-content;
+        padding-bottom: 18rem;
+        background-size: 80%, cover;
+    }
 `
 
 const StyledTitle = styled.div`
@@ -90,6 +106,58 @@ const StyledTitle = styled.div`
             color: white;
             :hover {
                 background-color: rgb(54, 57, 62);
+            }
+        }
+    }
+
+    @media only screen and (max-width: 540px) {
+        width: 100%;
+        padding: 0 2rem;
+        margin: 3em 0;
+        h1 {
+            font-size: 2.4rem;
+            text-align: left;
+        }
+        p {
+            text-align: left;
+            width: 100%;
+            margin-top: 3rem;
+            font-size: 1.5rem;
+        }
+        .button-container {
+            .download {
+                flex-basis: 100%;
+                justify-content: center;
+            }
+            .browser {
+                display: none;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 541px) and (max-width: 1114px) {
+        width: 100%;
+        padding: 0 4rem;
+        margin: 3em 0;
+        h1 {
+            font-size: 6rem;
+            text-align: left;
+            margin-top: 6rem;
+        }
+        p {
+            text-align: left;
+            width: 60%;
+            margin: 2rem 0;
+            font-size: 1.5rem;
+        }
+        .button-container {
+            justify-content: flex-start;
+            .download {
+                width: fit-content;
+                justify-content: center;
+            }
+            .browser {
+                display: none;
             }
         }
     }

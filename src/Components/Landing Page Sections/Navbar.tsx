@@ -76,6 +76,28 @@ const StyledNavbar = styled.nav`
             }
         }
     }
+
+    @media only screen and (max-width: 540px) {
+        padding: 2.5rem 1.8rem;
+        justify-content: space-between;
+        .links-container {
+            display: none;
+        }
+        .login-container {
+            display: none;
+        }
+    }
+
+    @media only screen and (min-width: 541px) and (max-width: 1114px) {
+        padding: 2.5rem 4rem;
+        justify-content: space-between;
+        .links-container {
+            display: none;
+        }
+        .login-container {
+            display: none;
+        }
+    }
 `
 
 export default Navbar
