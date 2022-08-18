@@ -42,6 +42,35 @@ const StyledInviteOnlySection = styled.div`
             line-height: 3.5rem;
         }
     }
+    @media only screen and (max-width: 540px) {
+        padding: 4rem 2rem;
+        flex-direction: column;
+        .fandom-desc {
+            h3 {
+                font-size: 2rem;
+            }
+            p{
+                margin-top: 3rem;
+                font-size: 1.5rem;
+                line-height: 2.5rem;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 541px) and (max-width:1114px){
+        padding: 7rem 3rem;
+        .fandom-desc {
+            flex-basis: 60%;
+            h3 {
+                font-size: 5rem;
+            }
+            p{
+                margin-top: 3rem;
+                font-size: 1.5rem;
+                line-height: 2.5rem;
+            }
+        }
+    }
 `
 
 export default FandomSection

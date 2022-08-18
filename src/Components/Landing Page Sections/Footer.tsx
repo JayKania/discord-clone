@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import discord_logo from "../../assets/discord_logo_1.svg"
+import flag from "../../assets/usa_flag.png";
 
 const Footer = () => {
     return (
@@ -7,7 +8,7 @@ const Footer = () => {
             <StyledFooterContent>
                 <div className="info-section">
                     <h4>Imagine A <br />Place</h4>
-                    <p>English, USA</p>
+                    <p><img src={flag} alt="flag" />English, USA</p>
                     <div className="social-media-links">
                         <div className="twitter">
                             <i className="fa fa-brands fa-2x fa-twitter"></i>
@@ -119,6 +120,13 @@ const StyledFooter = styled.footer`
             }
         }
     }
+    @media only screen and (max-width: 540px)  {
+        padding: 8rem 2rem;
+    }
+
+    @media only screen and (min-width: 541px) and (max-width:1114px) {
+        padding: 8rem 3rem;
+    }
 `
 
 const StyledFooterContent = styled.div`
@@ -137,6 +145,13 @@ const StyledFooterContent = styled.div`
             margin-top: 1rem;
             font-weight: 300;
             font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            img {
+                height: 1.5rem;
+                object-fit: contain;
+            }
         }
         .social-media-links {
             display: flex;
@@ -169,6 +184,38 @@ const StyledFooterContent = styled.div`
                 color: white;
                 :hover {
                     text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 540px) {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 4rem;        
+        .info-section {
+            flex-basis: 100%;
+        }
+        .footer-routes {
+            flex-wrap: wrap;
+            flex-basis: 100%;
+            .route-section {
+                flex-basis: 49%;
+                margin-top: 5rem;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 541px) and (max-width:1114px) {
+        .info-section {
+            flex-basis: 50%;
+        }
+        .footer-routes {
+            flex-wrap: wrap;
+            .route-section {
+                flex-basis: 50%;
+                :nth-of-type(n+3) {
+                    margin-top: 5rem;
                 }
             }
         }

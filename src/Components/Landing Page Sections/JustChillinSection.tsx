@@ -84,6 +84,51 @@ const StyledJustChillinSection = styled.div`
             }
         }
     }
+
+    @media only screen and (max-width: 540px) {
+        padding: 4rem 2rem;
+        flex-direction: column;
+        justify-content: flex-start;
+        h3 {
+            font-size: 2rem;
+            width: 100%;
+            text-align: left;
+        }
+        p{
+            margin-top: 3rem;
+            font-size: 1.5rem;
+            line-height: 2.5rem;
+            width: 100%;
+            text-align: left;
+        }
+        h4 {
+            width: 80%;
+            font-size: 3rem;
+            text-align: left;
+            padding: 2rem 0;
+            margin-left:0;
+        }
+        .button-container {
+            width: 100%;
+            .download {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    }
+    @media only screen and (min-width: 541px) and (max-width:1114px){
+        padding: 7rem 3rem;
+        h3 {
+            width: 100%;
+            font-size: 4rem;
+        }
+        p{
+            width: 100%;
+        }
+        h4 {
+            width: 70%;
+        }
+    }
 `
 
 export default JustChillinSection
