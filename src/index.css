@@ -3,6 +3,8 @@
   --primary-font-color: rgb(87, 101, 242);
   --secondary-background-color: rgb(246, 246, 246);
   --footer-background-color: rgb(35, 39, 42);
+  --off-white: rgb(246, 246, 246);
+  --text-link: rgb(0, 176, 244);
   font-size: 62.5%;
 }
 

@@ -3,14 +3,17 @@ import Navbar from './Navbar'
 import background_img from "../../assets/center_bg_landing_header.svg"
 import left_img from "../../assets/left_bg_landing_header.svg"
 import right_img from "../../assets/right_bg_landing_header.svg"
-interface homeProps {
 
+interface homeProps {
+    navPropsObject: {
+        mobileMenuHandler: any,
+    };
 }
 
-const Home = (props: homeProps) => {
+const Home = ({ navPropsObject }: homeProps) => {
     return (
         <StyledHome>
-            <Navbar />
+            <Navbar {...navPropsObject} />
             <StyledTitle>
                 <h1>IMAGINE A PLACE...</h1>
                 <p>...where you can belong to a school club, a gaming group, or a worldwide art community.
@@ -25,7 +28,8 @@ const Home = (props: homeProps) => {
                                 <path d="M18 18.001V20.001H6V18.001H4V20.001C4 21.103 4.897 22.001 6 22.001H18C19.104 22.001 20 21.103 20 20.001V18.001H18Z"></path>
                             </g>
                         </svg>
-                        <span>Download for Mac</span></button>
+                        <span>Download for Mac</span>
+                    </button>
                     <button className="browser">Open Discord in your browser</button>
                 </div>
             </StyledTitle>
@@ -128,6 +132,9 @@ const StyledTitle = styled.div`
             .download {
                 flex-basis: 100%;
                 justify-content: center;
+                img {
+                    width: 2.5rem;
+                }
             }
             .browser {
                 display: none;

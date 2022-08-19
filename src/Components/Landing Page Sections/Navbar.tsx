@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 import discord_logo from "../../assets/discord_logo_1.svg"
 interface navProps {
-
+    mobileMenuHandler: any
 }
 
-const Navbar = (props: navProps) => {
+const Navbar = ({ mobileMenuHandler }: navProps) => {
     return (
         <StyledNavbar>
             <div className="logo-container">
@@ -12,17 +12,22 @@ const Navbar = (props: navProps) => {
                 <span>Discord</span>
             </div>
             <div className="links-container">
-                <a href="#">Download</a>
-                <a href="#">Nitro</a>
-                <a href="#">Discover</a>
-                <a href="#">Safety</a>
-                <a href="#">Support</a>
-                <a href="#">Blog</a>
-                <a href="#">Carrers</a>
+                <a href="#download">Download</a>
+                <a href="#nitro">Nitro</a>
+                <a href="#discover">Discover</a>
+                <a href="#safety">Safety</a>
+                <a href="#support">Support</a>
+                <a href="#blog">Blog</a>
+                <a href="#careers">Carrers</a>
             </div>
             <div className="login-container">
                 <button>Login</button>
             </div>
+            {window.innerWidth <= 1114 ? <div className='burger-menu' onClick={mobileMenuHandler} >
+                <svg width="40" height="40" viewBox="0 0 40 40">
+                    <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M33.3327 10H6.66602V15H33.3327V10ZM6.66602 18.3317H33.3327V23.3317H6.66602V18.3317ZM6.66602 26.665H33.3327V31.665H6.66602V26.665Z"></path>
+                </svg>
+            </div> : null}
         </StyledNavbar>
     )
 }
@@ -74,6 +79,12 @@ const StyledNavbar = styled.nav`
                 color: var(--primary-font-color);
                 box-shadow: 0px 5px 5px 5px rgb(48, 48, 48, 0.1);
             }
+        }
+    }
+
+    .burger-menu {
+        :hover {
+            cursor: pointer;
         }
     }
 
