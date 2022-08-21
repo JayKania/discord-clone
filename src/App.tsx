@@ -1,12 +1,8 @@
 import { useState } from "react"
+import { Route, Routes } from "react-router-dom";
 import styled from "styled-components"
-import FandomSection from "./Components/Landing Page Sections/FandomSection"
-import Footer from "./Components/Landing Page Sections/Footer"
-import HangingOutSection from "./Components/Landing Page Sections/HangingOutSection"
-import Home from "./Components/Landing Page Sections/Home"
-import InviteOnlySection from "./Components/Landing Page Sections/InviteOnlySection"
-import JustChillinSection from "./Components/Landing Page Sections/JustChillinSection"
-import MobileMenu from "./Components/Landing Page Sections/MobileMenu/MobileMenu"
+import LandingPage from "./Components/Landing Page Sections/LandingPage"
+import Login from "./Components/Login/Login";
 const App = () => {
 
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -27,15 +23,18 @@ const App = () => {
     mobileMenuHandler: mobileMenuHandler
   }
 
+  const landingPagePropsObject = {
+    homePropsObject: homePropsObject,
+    isMobileMenuOpen: isMobileMenuOpen,
+    mobileMenuPropsObject: mobileMenuPropsObject
+  }
+
   return (
     <StyledApp className={`${isMobileMenuOpen ? "mobile-menu-open" : ""}`}>
-      <Home {...homePropsObject} />
-      <InviteOnlySection />
-      <HangingOutSection />
-      <FandomSection />
-      <JustChillinSection />
-      <Footer />
-      {isMobileMenuOpen ? <MobileMenu {...mobileMenuPropsObject} /> : null}
+      <Routes>
+        <Route path="/" element={<LandingPage {...landingPagePropsObject} />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
     </StyledApp>
   )
 }

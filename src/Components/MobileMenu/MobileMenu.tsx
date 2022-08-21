@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import discord_logo from "../../../assets/discord_logo_black.svg";
+import discord_logo from "../../assets/discord_logo_black.svg";
 
 interface mobileMenuProps {
     mobileMenuHandler: any

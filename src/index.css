@@ -5,6 +5,9 @@
   --footer-background-color: rgb(35, 39, 42);
   --off-white: rgb(246, 246, 246);
   --text-link: rgb(0, 176, 244);
+  --form-bg-color: rgb(54, 57, 62);
+  --form-input-bg-color: rgb(32, 34, 37);
+  --form-link-color: rgb(1, 174, 244);
   font-size: 62.5%;
 }
 

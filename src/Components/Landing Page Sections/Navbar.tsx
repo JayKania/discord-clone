@@ -23,11 +23,11 @@ const Navbar = ({ mobileMenuHandler }: navProps) => {
             <div className="login-container">
                 <button>Login</button>
             </div>
-            {window.innerWidth <= 1114 ? <div className='burger-menu' onClick={mobileMenuHandler} >
+            <div className='burger-menu' onClick={mobileMenuHandler} >
                 <svg width="40" height="40" viewBox="0 0 40 40">
-                    <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M33.3327 10H6.66602V15H33.3327V10ZM6.66602 18.3317H33.3327V23.3317H6.66602V18.3317ZM6.66602 26.665H33.3327V31.665H6.66602V26.665Z"></path>
+                    <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M33.3327 10H6.66602V15H33.3327V10ZM6.66602 18.3317H33.3327V23.3317H6.66602V18.3317ZM6.66602 26.665H33.3327V31.665H6.66602V26.665Z"></path>
                 </svg>
-            </div> : null}
+            </div>
         </StyledNavbar>
     )
 }
@@ -83,6 +83,7 @@ const StyledNavbar = styled.nav`
     }
 
     .burger-menu {
+        display: none;
         :hover {
             cursor: pointer;
         }
@@ -97,6 +98,9 @@ const StyledNavbar = styled.nav`
         .login-container {
             display: none;
         }
+        .burger-menu {
+            display: block;
+        }
     }
 
     @media only screen and (min-width: 541px) and (max-width: 1114px) {
@@ -107,6 +111,9 @@ const StyledNavbar = styled.nav`
         }
         .login-container {
             display: none;
+        }
+        .burger-menu {
+            display: block;
         }
     }
 `
