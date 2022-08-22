@@ -50,6 +50,9 @@ const StyledLoginContainer = styled.div`
     height: 100vh;
     width: 100%;
     display: flex;
+    @media only screen and (max-width: 540px) {
+        
+    }
 `
 
 const StyledLoginQRContainer = styled.div`
@@ -65,6 +68,16 @@ const StyledLoginQRContainer = styled.div`
     width: 800px;
     justify-content: space-between;
     gap: 7.5rem;
+    box-shadow: 0px 0px 3px 1px rgb(54, 57, 62);
+    @media only screen and (max-width: 540px) {
+        width: 100%;
+        height: 100vh;
+        padding: 2rem;
+    }
+
+    @media only screen and (min-width: 541px) and (max-width: 1114px) {
+        width: 480px;
+    }
 `
 
 const StyledForm = styled.form`
@@ -127,6 +140,9 @@ const StyledForm = styled.form`
         margin-top: 2rem;
         width: 100%;
         font-size: 1.5rem;
+        :hover {
+            cursor: pointer;
+        }
     }
 
     .register {
@@ -136,6 +152,10 @@ const StyledForm = styled.form`
             color: var(--form-link-color);
             text-decoration: none;
         }
+    }
+    @media only screen and (max-width: 540px) {
+        /* display: none; */
+        width: 100%;
     }
 `
 
@@ -168,6 +188,13 @@ const StyledQRContainer = styled.div`
         span {
             font-weight: 700;
         }
+    }
+    @media only screen and (max-width: 540px) {
+        display: none;
+    }
+
+    @media only screen and (min-width: 541px) and (max-width: 1114px) {
+        display: none;
     }
 `
 
