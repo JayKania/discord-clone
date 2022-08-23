@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import styled from "styled-components"
 import LandingPage from "./Components/Landing Page Sections/LandingPage"
 import Login from "./Components/Login/Login";
+import SignUp from "./Components/Signup/SignUp";
 const App = () => {
 
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -34,6 +35,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<LandingPage {...landingPagePropsObject} />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<SignUp />} />
       </Routes>
     </StyledApp>
   )

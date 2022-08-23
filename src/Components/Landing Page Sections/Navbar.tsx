@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import discord_logo from "../../assets/discord_logo_1.svg"
 interface navProps {
@@ -5,6 +6,13 @@ interface navProps {
 }
 
 const Navbar = ({ mobileMenuHandler }: navProps) => {
+
+    let navigate = useNavigate();
+
+    const loginRouteHandler = () => {
+        navigate("/login");
+    }
+
     return (
         <StyledNavbar>
             <div className="logo-container">
@@ -21,7 +29,7 @@ const Navbar = ({ mobileMenuHandler }: navProps) => {
                 <a href="#careers">Carrers</a>
             </div>
             <div className="login-container">
-                <button>Login</button>
+                <button onClick={loginRouteHandler}>Login</button>
             </div>
             <div className='burger-menu' onClick={mobileMenuHandler} >
                 <svg width="40" height="40" viewBox="0 0 40 40">

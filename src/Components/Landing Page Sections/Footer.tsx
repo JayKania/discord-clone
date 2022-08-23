@@ -1,8 +1,16 @@
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components"
 import discord_logo from "../../assets/discord_logo_1.svg"
 import flag from "../../assets/usa_flag.png";
 
 const Footer = () => {
+
+    let navigate = useNavigate();
+
+    const signupRouteHandler = () => {
+        navigate("/register");
+    }
+
     return (
         <StyledFooter>
             <StyledFooterContent>
@@ -72,7 +80,7 @@ const Footer = () => {
                     <span>Discord</span>
                 </div>
                 <div className="signup-container">
-                    <button>Sign up</button>
+                    <button onClick={signupRouteHandler}>Sign up</button>
                 </div>
             </div>
         </StyledFooter>

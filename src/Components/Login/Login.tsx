@@ -8,35 +8,37 @@ interface loginProps {
 const Login = () => {
     return (
         <StyledLoginContainer>
-            <StyledLoginQRContainer onSubmit={(event) => event.preventDefault()}>
-                <StyledForm className="form">
-                    <h3>Welcome back!</h3>
-                    <p>We're so excited to see you again!</p>
+            <StyledLoginQRWrapperForAnimation>
+                <StyledLoginQRContainer onSubmit={(event) => event.preventDefault()}>
+                    <StyledForm className="form">
+                        <h3>Welcome back!</h3>
+                        <p>We're so excited to see you again!</p>
 
-                    <div className="email-container">
-                        <label htmlFor="email">EMAIL OR PHONE NUMBER</label>
-                        <input type="email" name="email" id="email" autoFocus />
-                    </div>
+                        <div className="email-container">
+                            <label htmlFor="email">EMAIL OR PHONE NUMBER</label>
+                            <input type="email" name="email" id="email" autoFocus />
+                        </div>
 
-                    <div className="password-container">
-                        <label htmlFor="password">PASSWORD</label>
-                        <input type="password" name="password" id="password" />
-                        <a href="#">Forgot your password?</a>
-                    </div>
+                        <div className="password-container">
+                            <label htmlFor="password">PASSWORD</label>
+                            <input type="password" name="password" id="password" />
+                            <a href="#">Forgot your password?</a>
+                        </div>
 
-                    <button className="submit">Log In</button>
-                    <p className="register">Need an account? <a href="#">Register</a></p>
-                </StyledForm>
+                        <button className="submit">Log In</button>
+                        <p className="register">Need an account? <a href="#">Register</a></p>
+                    </StyledForm>
 
-                <StyledQRContainer>
-                    <div className="qr-img">
-                        <img src={qr_img} alt="qr_img" />
-                    </div>
-                    <h3>Log in with QR Code</h3>
-                    <p>Scan this with <span>Discord mobile App</span> to log in instantly.</p>
-                </StyledQRContainer>
+                    <StyledQRContainer>
+                        <div className="qr-img">
+                            <img src={qr_img} alt="qr_img" />
+                        </div>
+                        <h3>Log in with QR Code</h3>
+                        <p>Scan this with <span>Discord mobile App</span> to log in instantly.</p>
+                    </StyledQRContainer>
 
-            </StyledLoginQRContainer>
+                </StyledLoginQRContainer>
+            </StyledLoginQRWrapperForAnimation>
 
         </StyledLoginContainer>
     )
@@ -50,34 +52,58 @@ const StyledLoginContainer = styled.div`
     height: 100vh;
     width: 100%;
     display: flex;
-    @media only screen and (max-width: 540px) {
-        
-    }
 `
 
-const StyledLoginQRContainer = styled.div`
-    background-color: var(--form-bg-color);
+const StyledLoginQRWrapperForAnimation = styled.div`
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 3rem;
-    display: flex;
-    color: white;
-    border-radius: 5px;
     width: 800px;
-    justify-content: space-between;
-    gap: 7.5rem;
-    box-shadow: 0px 0px 3px 1px rgb(54, 57, 62);
+    transform: translate(-50%, -50%);
+
     @media only screen and (max-width: 540px) {
         width: 100%;
         height: 100vh;
-        padding: 2rem;
     }
 
     @media only screen and (min-width: 541px) and (max-width: 1114px) {
         width: 480px;
     }
+`
+
+const StyledLoginQRContainer = styled.div`
+    background-color: var(--form-bg-color);
+    padding: 3rem;
+    height: 100%;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+    gap: 7.5rem;
+    box-shadow: 0px 0px 3px 1px rgb(54, 57, 62);
+    animation: bounce 250ms ease 1;
+
+    @keyframes bounce {
+        0% {
+            transform: translateY(-50%);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @media only screen and (max-width: 540px) {
+        width: 100%;
+        padding: 2rem;
+    }
+
+    @media only screen and (min-width: 541px) and (max-width: 1114px) {
+        width: 100%;
+    }
+
 `
 
 const StyledForm = styled.form`
@@ -140,8 +166,10 @@ const StyledForm = styled.form`
         margin-top: 2rem;
         width: 100%;
         font-size: 1.5rem;
+        transition: background-color 200ms ease;
         :hover {
             cursor: pointer;
+            background-color: var(--button-hover-color);
         }
     }
 
