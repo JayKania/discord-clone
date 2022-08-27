@@ -10,8 +10,9 @@
   --form-link-color: rgb(1, 174, 244);
   --button-hover-color: rgb(71, 82, 196);
   --date-background-color: rgb(48, 51, 56);
-  --date-border-color: rgba(32, 34, 37, 0.5);
+  --date-border-color: rgba(32, 34, 37);
   --date-border-hover-color: rgb(22, 24, 26);
+  --date-hover-color: rgb(36, 39, 42);
   font-size: 62.5%;
 }
 

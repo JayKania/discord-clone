@@ -1,9 +1,60 @@
+import { useState } from "react";
 import styled from "styled-components"
 import signup_bg from "../../assets/login_bg.svg";
+import Days from "./Days";
+import Months from "./Months";
+import Years from "./Years";
 
 const SignUp = () => {
+
+    const [monthsModal, setMonthsModal] = useState(false);
+    const [daysModal, setDaysModal] = useState(false);
+    const [yearsModal, setYearsModal] = useState(false);
+
+    const [monthValue, setMonthValue] = useState("");
+    const [dayValue, setDayValue] = useState("");
+    const [yearValue, setYearValue] = useState("");
+
+    const closeAllModals = () => {
+        if (monthsModal) {
+            setMonthsModal(false);
+        } else if (daysModal) {
+            setDaysModal(false);
+        } else if (yearsModal) {
+            setYearsModal(false);
+        }
+    }
+
+    const monthsModalHanlder = () => {
+        setMonthsModal(!monthsModal);
+        setDaysModal(false);
+        setYearsModal(false);
+    }
+    const daysModalHanlder = () => {
+        setMonthsModal(false);
+        setDaysModal(!daysModal);
+        setYearsModal(false);
+    }
+    const yearsModalHanlder = () => {
+        setMonthsModal(false);
+        setDaysModal(false);
+        setYearsModal(!yearsModal);
+    }
+
+    const monthValueHandler = (month: string) => {
+        setMonthValue(month);
+    }
+
+    const dayValueHandler = (day: string) => {
+        setDayValue(day);
+    }
+
+    const yearValueHandler = (year: string) => {
+        setYearValue(year)
+    }
+
     return (
-        <StyledSignUpContainer>
+        <StyledSignUpContainer onClick={closeAllModals}>
             <StyledSignUpFormContainerForAnimation>
                 <StyledSignUpForm>
                     <h3>Create an account</h3>
@@ -25,33 +76,34 @@ const SignUp = () => {
 
                     <div className="date-of-birth-container">
                         <div className="month-menu menu">
-                            <div className="option-menu">
-                                {/* <div className="option" id="option-0">January</div>
-                                <div className="option" id="option-1">February</div>
-                                <div className="option" id="option-2">March</div>
-                                <div className="option" id="option-3">April</div>
-                                <div className="option" id="option-4">May</div>
-                                <div className="option" id="option-5">June</div>
-                                <div className="option" id="option-6">July</div>
-                                <div className="option" id="option-7">August</div>
-                                <div className="option" id="option-8">September</div>
-                                <div className="option" id="option-9">October</div>
-                                <div className="option" id="option-10">November</div>
-                                <div className="option" id="option-11">December</div> */}
-                            </div>
-                            <input type="text" name="month" id="month" className="month-input" placeholder="Month" />
+                            {
+                                monthsModal ?
+                                    <div className="option-menu">
+                                        <Months monthValueHandler={monthValueHandler} />
+                                    </div>
+                                    : null
+                            }
+                            <input type="text" name="month" id="month" className="month-input" placeholder="Month" value={monthValue} onClick={monthsModalHanlder} />
                         </div>
                         <div className="day-menu menu">
-                            <div className="option-menu">
-
-                            </div>
-                            <input type="text" name="day" id="day" className="day-input" placeholder="Day" />
+                            {
+                                daysModal ?
+                                    <div className="option-menu">
+                                        <Days dayValueHandler={dayValueHandler} />
+                                    </div>
+                                    : null
+                            }
+                            <input type="text" name="day" id="day" className="day-input" placeholder="Day" value={dayValue} onClick={daysModalHanlder} />
                         </div>
                         <div className="year-menu menu">
-                            <div className="option-menu">
-
-                            </div>
-                            <input type="text" name="year" id="year" className="year-input" placeholder="Year" />
+                            {
+                                yearsModal ?
+                                    <div className="option-menu">
+                                        <Years yearValueHandler={yearValueHandler} />
+                                    </div>
+                                    : null
+                            }
+                            <input type="text" name="year" id="year" className="year-input" placeholder="Year" value={yearValue} onClick={yearsModalHanlder} />
                         </div>
                     </div>
 
@@ -172,6 +224,7 @@ const StyledSignUpForm = styled.form`
         display: flex;
         gap: 1rem;
        .menu {
+        position: relative;
         input {
             background-color: var(--date-background-color);
             border: none;
@@ -184,6 +237,25 @@ const StyledSignUpForm = styled.form`
             font-size: 1.6rem;
             :hover {
                 border-color: var(--date-border-hover-color); 
+            }
+        }
+        .option-menu {
+            position: absolute;
+            bottom: 100%;
+            width: 100%;
+            border: 1px solid var(--date-border-color);
+            border-radius: 4px;
+            background-color: var(--date-background-color);
+            display: flex;
+            flex-direction: column;
+            height: 205px;
+            overflow: scroll;
+            .option {
+                padding: 0.97rem 1rem;
+                :hover {
+                    background-color: var(--date-hover-color);
+                    cursor: pointer;
+                }
             }
         }
        }
