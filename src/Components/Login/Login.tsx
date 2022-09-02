@@ -1,32 +1,46 @@
+import { useState } from "react";
 import styled from "styled-components"
 import login_bg from "../../assets/login_bg.svg";
 import qr_img from "../../assets/qr_code.png";
-interface loginProps {
 
-}
 
 const Login = () => {
+
+    const [emailValue, setEmailValue] = useState("");
+    const [passwordValue, setPasswordValue] = useState("");
+
+    const inputHandler = (event: any) => {
+
+        const inputValue = event.target.value;
+
+        if (event.target.id === "email") {
+            setEmailValue(inputValue);
+        } else if (event.target.id === "password") {
+            setPasswordValue(inputValue);
+        }
+    }
+
     return (
         <StyledLoginContainer>
             <StyledLoginQRWrapperForAnimation>
-                <StyledLoginQRContainer onSubmit={(event) => event.preventDefault()}>
-                    <StyledForm className="form">
+                <StyledLoginQRContainer>
+                    <StyledForm className="form" onSubmit={(event) => event.preventDefault()}>
                         <h3>Welcome back!</h3>
                         <p>We're so excited to see you again!</p>
 
                         <div className="email-container">
                             <label htmlFor="email">EMAIL OR PHONE NUMBER</label>
-                            <input type="email" name="email" id="email" autoFocus />
+                            <input type="email" name="email" id="email" value={emailValue} onChange={inputHandler} autoFocus />
                         </div>
 
                         <div className="password-container">
                             <label htmlFor="password">PASSWORD</label>
-                            <input type="password" name="password" id="password" />
+                            <input type="password" name="password" id="password" value={passwordValue} onChange={inputHandler} />
                             <a href="#">Forgot your password?</a>
                         </div>
 
                         <button className="submit">Log In</button>
-                        <p className="register">Need an account? <a href="#">Register</a></p>
+                        <p className="register">Need an account? <a href="/register">Register</a></p>
                     </StyledForm>
 
                     <StyledQRContainer>
